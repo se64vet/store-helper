@@ -1,0 +1,110 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+    background: url('../../assets/png/authBg.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.pageTitle {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.noti {
+    max-width: 15em;
+    text-align: center;
+    align-self: center;
+    color: red;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: #f3f3f3;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0 1rem 0
+}
+
+.formChild {
+    margin: 1em 0;
+}
+
+.formLabel {
+    float: left;
+    margin: 0;
+    margin-bottom: .5em;
+    padding: 0
+}
+
+.right-label {
+    float: right;
+    cursor: pointer
+}
+
+.formInput {
+    width: 100%;
+    padding: .7rem;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #dee;
+
+    margin: 0;
+    box-sizing: border-box;
+    font-size: small;
+}
+
+.formInput:focus{
+    border: 2px solid salmon;
+}
+
+.primaryBtn {
+    display: block;
+    width: 100%;
+    padding: .7rem 0;
+    border: none;
+    background: #222;
+    color: #fff;
+    border: 2px solid #222;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.primaryBtn:hover {
+    background: #444;
+    border: 2px solid #444;
+    transition: all .5s
+}
+
+.secondaryBtn {
+    display: block;
+    width: 100%;
+    padding: .7rem 0;
+    border: none;
+    color: #222;
+    border: 2px solid #222;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.secondaryBtn:hover {
+    background: #222;
+    border: 2px solid #999;
+    color: white;
+    transition: all .5s
+}
+
+.clickableBtn {
+    color: orangered;
+    cursor: pointer;
+}

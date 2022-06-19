@@ -1,0 +1,77 @@
+.sidebar {
+  width: 25%;
+  background-color: #101010;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebarContent {
+  height: 100%;
+  display: flex;
+  gap: 6em;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 10em;
+}
+
+.profileDetails {
+  margin-top: 2rem;
+}
+
+.profileImageDiv {
+  position: relative;
+}
+
+.profileImg {
+  font-size: 2em;
+  font-weight: 600;
+  background-color: salmon;
+  aspect-ratio: 1/1;
+  max-width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.userName {
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.userEmail {
+  margin-top: 1rem;
+  opacity: 0.6;
+}
+
+.sidebarNav {
+  margin-bottom: 3rem;
+}
+
+.sidebarNavItem {
+  margin: 2rem 0;
+}
+
+.sidebarNavLink {
+  text-decoration: none;
+  outline: none;
+  color: white;
+  opacity: 0.5;
+  font-size: 25px;
+  font-weight: 500;
+
+  &Active {
+    @extend .sidebarNavLink;
+    opacity: 1;
+  }
+
+  &:hover{
+    opacity: .8;
+  }
+}
+
