@@ -115,15 +115,18 @@ export default function Dashboard() {
         </main>
         : <main className={styles.expenses}>
         <div className={styles.expensesCard}>
-          {/* 1st Section */}
+          {/* left column */}
           <section className={styles.expensesOverview}>
+
             {/* Logo */}
             <div className={styles.expensesHeader}>
               <p className={styles.expensesTitle}>Store Wise</p>
               <p>Store management system</p>
             </div>
+
             {/* Revenue Chart */}
             <Chart title={"Revenue Last 12 Months"} data={data}/>
+
             {/* New product List */}
             <div className={styles.expensesOverviewHeader}>
               <p className={styles.expensesOverviewTitle}>Recently Added Items</p>
@@ -133,17 +136,14 @@ export default function Dashboard() {
              ? <p className={styles.dateRange}>You don't have any product. Create one!</p>
              :  <ProductList products={newProducts} />
             }
+
             {/* Sale last 3 months */}
             <div className={styles.expensesOverviewHeader}>
               <p className={styles.expensesOverviewTitle}>
                 Sale Last Months
               </p>
               <button>
-                <img
-                  className={styles.expenseOption}
-                  src={optionIcon}
-                  alt="options"
-                />
+                <img className={styles.expenseOption} src={optionIcon} alt="options"/>
               </button>
             </div>
 
@@ -172,13 +172,16 @@ export default function Dashboard() {
             </ul>
           </section>
 
-          {/* 2nd Section */}
+        {/* right column */}
+          {/* Best selling */}
           <section className={styles.moneyOverview}>
             <p className={styles.moneyOverviewTitle}>Best Sell Items</p>
             {bestSellingProducts.length !== 0
               ? <BestSelling products={bestSellingProducts}/>
               : <p>You haven't any products</p>
             }
+
+            {/* tips */}
             <Tips/>
           </section>
         </div>

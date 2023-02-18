@@ -1,0 +1,66 @@
+
+.dropdownContainer{
+    position: relative;
+    .searchBar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        border: 2px solid black;
+        border-radius: 4px;
+        cursor: pointer;
+        .expandIcon{
+            width: 1.5em;
+            aspect-ratio: 1/1;
+            text-align: center;
+            :hover {
+                background-color: lightgray;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .menu{
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        border: 2px solid black;
+        border-radius: 5px;
+        margin-top: .2em;
+        max-height: 20vh;
+        overflow: auto;
+        :hover {
+            background-color: rgb(202, 202, 202);
+            border-radius: 5px;
+        }
+        .menuItem{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: .5em;
+            margin: 0;
+            cursor: default;
+            .itemName{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1em;
+                span{
+                    text-align: left;
+                }
+                img{
+                    border-radius: 50%;
+                    background-color: white;
+                    max-width: 40px;
+                    width: 30px;
+                    aspect-ratio: 1/1;
+                    object-fit: contain;
+                }
+            }
+            
+        }
+    }
+}

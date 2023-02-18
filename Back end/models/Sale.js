@@ -18,7 +18,7 @@ const MonthSaleSchema = new mongoose.Schema({
         default: (this.totalSale * 0.3)
     }
 
-}, {timestamps})
+}, {timestamps: true})
 
 const YearSaleSchema = new mongoose.Schema({
     year: {
@@ -40,4 +40,26 @@ const SaleSchema = new mongoose.Schema({
     }
 
 })
+
+const BillSchema = new mongoose.Schema({
+    amount: {
+        type: Number,
+        required: [true, "missing total amount of bill"]
+    },
+    status: {
+        type: String,
+        enum: ['pending', 'completed', 'cancelled'],
+        required: [true, 'missing status'],
+        default: 'pending'
+    },
+    items: {
+        type: [{_id: false, item: {type: mongoose.Types.ObjectId, ref: "Product"}, qty: {type: Number, default: 1}}],
+    },
+    user: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
+        required: [true, 'Please provide user'],
+    },
+}, {timestamps: true})
 module.exports = mongoose.model('Sale', SaleSchema)
+module.exports = mongoose.model('Invoice', BillSchema)

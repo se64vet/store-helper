@@ -1,7 +1,7 @@
 {
   "name": "dashboard",
   "version": "0.1.0",
-  "homepage": "http://mitchelst.github.io/",
+  "homepage": "http://se64vet.github.io/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",

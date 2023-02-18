@@ -9,10 +9,6 @@ const cors = require('cors');
 const xss = require('xss-clean');
 const rateLimiter = require('express-rate-limit');
 
-// Swagger
-const swaggerUI = require('swagger-ui-express');
-const YAML = require('yamljs');
-const swaggerDocument = YAML.load('./swagger.yaml');
 
 const express = require('express');
 const app = express();
@@ -21,7 +17,8 @@ const connectDB = require('./db/connect');
 const authenticateUser = require('./middleware/authentication');
 // routers
 const authRouter = require('./routes/auth');
-const shopRouter = require('./routes/Product');
+const productRouter = require('./routes/Product');
+const saleRouter = require('./routes/sale')
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
@@ -39,13 +36,13 @@ app.use(cors());
 app.use(xss());
 
 app.get('/', (req, res) => {
-  res.send('<h1>Shop Manager System API</h1><a href="/api-docs">Documentation</a>');
+  res.send('<h1>Shop Manager System API</h1>');
 });
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 // routes 
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/shop',authenticateUser, shopRouter);
+app.use('/api/v1/shop',authenticateUser, productRouter);
+app.use('/api/v1/sale',authenticateUser, saleRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

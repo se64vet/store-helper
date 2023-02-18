@@ -2,12 +2,12 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { createProduct, deleteProduct, getProducts, updateProduct } from "../../API/api";
 import ReactLoading from 'react-loading';
 import styles from './AllItems.module.scss';
-import { ProductForm } from '../../components/ProductForms/ProductForms';
+import { ProductForm } from '../../components/Forms/ProductForms';
 import { Tips } from '../Dashboard/Dashboard';
 const ProductCard = React.lazy(()=>import ('../../components/Card/ProductCard')) ;
 const ProductList = React.lazy(() =>import ('../../components/List/ProductList'));
 
-interface Product {
+export interface Product {
     _id?: any,
     name: string,
     price?: number,
