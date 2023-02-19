@@ -76,17 +76,18 @@ export default function Dashboard() {
   const queryProducts = async (query:string="", setState: (data:any)=>void)=>{
     const response = await getProducts(query);
     setState(response);
-    setLoading(false);
   }
 
   useEffect(()=>{  
     let isSubcription:boolean = true;
     try {
       if(isSubcription){
+        setLoading(true)
         const newProductsQuery : string = "select=name,img,price,createdAt&limit=3";
         queryProducts(newProductsQuery, setNewProducts);
         const bestSellingProductsQuery : string = "sort=-sold&select=name,sold&limit=5";
         queryProducts(bestSellingProductsQuery, setBestSellingProducts);
+        setLoading(false);
       }
       
     } catch (error) {
