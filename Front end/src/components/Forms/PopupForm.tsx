@@ -20,7 +20,7 @@ const PopupForm = ({disable, addOrder}:popupFormProps) => {
   const [items, setItems] = useState<Product[]>()
   const [order, setOrder] = useState<orderProduct[]>([])
   let total = 0;
-  order.forEach((item)=> total+= item.finalPrice)
+  order.forEach((item:orderProduct)=> total+= item.finalPrice)
   const fetchItems = async()=>{
     try {
       const query = "select=name,img,price&sort=-createdAt"
