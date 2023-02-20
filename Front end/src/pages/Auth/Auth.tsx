@@ -104,6 +104,10 @@ const Auth = () => {
                 </p>
             </form>
             
+            <div style={{position: "absolute", bottom: "2em"}}>
+              <p>This app is hosted in free, slow speed server.</p>
+              <p>Thank you for your patient.</p>
+            </div>
         </div>
   )
 }

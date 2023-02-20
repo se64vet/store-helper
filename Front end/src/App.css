@@ -27,3 +27,7 @@ html {
 *::-webkit-scrollbar-thumb {
   background: lightsalmon;
 }
+
+button {
+  cursor: pointer;
+}
