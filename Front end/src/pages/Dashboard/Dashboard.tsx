@@ -93,11 +93,9 @@ export default function Dashboard() {
     } catch (error) {
         if(!isSubcription){
           console.log('something wrong happened!');
-          
         }
     }
-
-    return ()=>{isSubcription = false}
+    return (()=>{isSubcription = false})
     
   },[])
 

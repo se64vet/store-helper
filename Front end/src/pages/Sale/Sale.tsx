@@ -21,7 +21,6 @@ const Sale = () => {
     const [today, setToday] = useState<Date>();
     const [newInvoicePopup, setNewInvoicePopup] = useState<boolean>(false)
     const [isDelete, setIsDelete] = useState<boolean>(false)
-    const [confirmDelete, setConfirmDelete] = useState<boolean>(false)
     const fetchInvoices = async()=>{
       await getInvoices()
       .then((response)=>{

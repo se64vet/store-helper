@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { client } from "../../API/api";
 import { LoginForm, RegisterForm } from "../../components/Forms/AuthForm"
-import {cookie2Json, createCookies, eraseCookies} from '../../API/cookie'
+import {cookie2Json, createCookies, eraseCookies} from "../../API/cookie"
 import style from './Auth.module.scss';
 
 const Auth = () => {

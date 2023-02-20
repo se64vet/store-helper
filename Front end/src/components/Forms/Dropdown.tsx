@@ -19,7 +19,7 @@ const Dropdown = ({handleOnChoose, itemList}:dropdownProps)=>{
             {itemList && itemList.map((item, idx)=>(
             <div key={idx} className={styles.menuItem} onClick={(e) => {handleOnChoose(e, item); setToggleMenu(!toggleMenu)}}>
                 <div className={styles.itemName}>
-                    <img src={item.img ? item.img[0].thumbnail : "https://via.placeholder.com/40 "} alt="item image" />
+                    <img src={item.img ? item.img[0].thumbnail : "https://via.placeholder.com/40 "} alt="item" />
                     <span>{item.name}</span>
                 </div>
                 <span className={styles.itemInfo}>${item.price}</span>

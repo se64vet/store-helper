@@ -144,21 +144,14 @@ const AllItems = () => {
     }
 
     // fetch data 
-    function fetchData(){
+    async function fetchData (){
         const newProductsQuery : string = "select=name,img,price,category,sold,createdAt&sort=-createdAt";
-        queryProducts(newProductsQuery, setProducts);
+        await queryProducts(newProductsQuery, setProducts);
     }
     useEffect(()=>{
-        try {
-                fetchData();
-                setLoading(false)
-            
-        } catch (error) {
-            console.log(error);  
-        }
-        return ()=>{
-        }
-        
+        setLoading(true)
+        fetchData();
+        setLoading(false)
       },[])
 
     // set initial item to display <ProductCard />
